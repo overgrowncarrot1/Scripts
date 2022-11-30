@@ -1,0 +1,2 @@
+find / 2>/dev/null | grep user.txt
+find / -name user.txt -type f 2>/dev/null

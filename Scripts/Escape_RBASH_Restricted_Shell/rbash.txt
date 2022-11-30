@@ -1,0 +1,16 @@
+Quick Wins
+If ‘/’ is allowed in commands just run /bin/sh
+
+If we can set PATH or SHELL variable
+
+export PATH=/bin:/usr/bin:/sbin:$PATH
+export SHELL=/bin/sh
+
+--------------------------------------------
+
+python -c 'import os; os.system("/bin/bash")
+
+--------------------------------------------
+
+perl -e 'exec "/bin/sh";'
+

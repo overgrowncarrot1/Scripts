@@ -1,0 +1,2 @@
+ssh -L 9999:localhost:10000 agent47@10.10.27.118
+ss -utlpn | put that on the exploited machine to see what services are running that are hidden and only running on that machine, then do the above

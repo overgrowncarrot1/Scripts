@@ -1,0 +1,3 @@
+LOGIN AS THE USER YOU WANT, THEN PUT A -t 'bash --noprofile' AT THE END
+
+ssh 296640a3b825115a47b68fc44501c828@192.168.185.85 -t 'bash --noprofile'  
