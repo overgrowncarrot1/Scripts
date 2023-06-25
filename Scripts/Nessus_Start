@@ -1,6 +1,0 @@
-- You can start Nessus Scanner by typing /bin/systemctl start nessusd.service
- - Then go to https://kali:8834/ to configure your scanner
-
-                                                                                
-┌──(kali㉿kali)-[~/Downloads]
-└─$ /bin/systemctl start nessusd.service

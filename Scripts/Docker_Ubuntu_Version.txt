@@ -1,2 +1,0 @@
-docker image ls | perl -lane 'print "docker run --rm $F[0]:$F[1] cat /etc/os-release" unless /REPOSITORY/' | sh | grep PRETTY
-
