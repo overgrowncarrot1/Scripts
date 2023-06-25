@@ -1,0 +1,10 @@
+cat /etc/crontab
+
+TO SEE DAILY
+
+cd /etc/cron.daily
+ls -la
+
+SHOWS ALL DAILY CRONJOBS
+
+

