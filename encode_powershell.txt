@@ -1,0 +1,7 @@
+$command = 'Write-Host "Hello, World!"'
+$bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
+$encodedCommand = [Convert]::ToBase64String($bytes)
+$encodedCommand
+
+powershell.exe -EncodedCommand $encodedCommand
+
